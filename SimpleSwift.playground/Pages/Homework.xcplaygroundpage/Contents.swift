@@ -37,7 +37,9 @@ func calculate(_ args: [String]) -> Int {
             return numbers.reduce(0, +) / numbers.count
         }
     } else if args.contains("fact") {
-        guard let n = Int(args[0]) else { return 0 }
+        guard let n = Int(args[0]) else {
+            return 0
+        }
         return (1...max(n, 1)).reduce(1, *)
     }
     guard args.count == 3, let lhs = Int(args[0]), let rhs = Int(args[2]) else { return 0 }
